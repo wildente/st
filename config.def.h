@@ -6,8 +6,9 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 //static char font[] = "Liberation Mono:pixelsize=14:antialias=true:autohint=true";
-static char font[] = "PragmataPro:pixelsize=14:antialias=true:autohint=true";
-static int borderpx = 2;
+//static char font[] = "PragmataPro:pixelsize=12:antialias=true:autohint=true";
+static char font[] = "Iosevka Nerd Font Mono:size=10.5:weight=medium:antialias=true:autohint=true:hintstyle=full";
+static int borderpx = 0;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -33,7 +34,7 @@ static float chscale = 1.0;
  *
  * More advanced example: " `'\"()[]{}"
  */
-static char worddelimiters[] = " ";
+static char worddelimiters[] = " `'\"()[]{}";
 
 /* selection timeouts (in milliseconds) */
 static unsigned int doubleclicktimeout = 300;
@@ -64,7 +65,7 @@ static unsigned int cursorthickness = 2;
 static int bellvolume = 0;
 
 /* default TERM value */
-static char termname[] = "st-256color";
+static char termname[] = "xterm-256color";
 
 /*
  * spaces per tab
@@ -114,30 +115,32 @@ static const char *colorname[] = {
 
 /* Terminal colors for alternate (light) palette */
 static const char *altcolorname[] = {
-  "#282c34",
-  "#e06c75",
-  "#98c379",
-  "#e5c07b",
-  "#61afef",
-  "#c678dd",
-  "#56b6c2",
-  "#dcdfe4",
 
-  "#282c34",
-  "#e06c75",
-  "#98c379",
-  "#e5c07b",
-  "#61afef",
-  "#c678dd",
-  "#56b6c2",
-  "#dcdfe4",
+
+  "#383a42",
+  "#e45649",
+  "#50a14f",
+  "#c18401",
+  "#0184bc",
+  "#a626a4",
+  "#0997b3",
+  "#fafafa",
+
+  "#383a42",
+  "#e45649",
+  "#50a14f",
+  "#c18401",
+  "#0184bc",
+  "#a626a4",
+  "#0997b3",
+  "#fafafa",
 
   [255] = 0,
 
-  "#dcdfe4",
-  "#181A1F",
-  "#181A1F",
-  "#dcdfe4"
+  "#fafafa",
+  "#383a42",
+  "#383a42",
+  "#fafafa"
 };
 
 /*
@@ -212,7 +215,7 @@ static Shortcut shortcuts[] = {
 	{ MODKEY|ShiftMask,     XK_V,           clippaste,      {.i =  0} },
 	{ MODKEY,               XK_Num_Lock,    numlock,        {.i =  0} },
 	{ MODKEY,               XK_Control_L,   iso14755,       {.i =  0} },
-  { XK_ANY_MOD,           XK_F6,          swapcolors,     {.i =  0} },
+    { XK_ANY_MOD,           XK_F7,          swapcolors,     {.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 };
@@ -498,6 +501,6 @@ static uint selmasks[] = {
  */
 static char ascii_printable[] =
 	" !\"#$%&'()*+,-./0123456789:;<=>?"
-	"@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_"
-	"`abcdefghijklmnopqrstuvwxyz{|}~";
+	"@ABCDEFGHIJKLMNOPQRSTUVWXYZÖÄÜß[\\]^_"
+	"`abcdefghijklmnopqrstuvwxyzöäü{|}~";
 
